@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script type="text/javascript">
+// create class instance
+var sampleClassInstance = new SampleClass();
+
+// call method
+sampleClassInstance.DisplayGreeting();
+
+// "SampleClass" class
+function SampleClass(hour)
+{
+  // class "constructor" initializes this.hour field
+  if (hour)
+  {
+    // if the hour parameter has a value, store it as a class field
+    this.hour = hour;
+  }
+  else
+  {
+    // if the hour parameter doesn't exist, save the current hour
+    var date = new Date();
+    this.hour = date.getHours();
+  }
+  // display greeting
+  this.DisplayGreeting = function()
+  {
+    if (this.hour >= 22 || this.hour <= 5) 
+      document.write("Goodnight, world!");
+    else
+      document.write("GoodDay, world!");
+  }  
+}
+  </script>
+</head>
+</html>
